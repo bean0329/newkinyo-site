@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>African Net Sponge | Newkinyo</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    color: #3c3839;
+    line-height: 1.8;
+    background: #fff;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #3c3839;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.nav-menu a {
+    margin-left: 35px;
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+}
+.nav-menu a.active {
+    color: #3c3839;
+    font-weight: 600;
+}
+
+.section {
+    padding: 70px 0;
+}
+.section-title {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #3c3839;
+}
+.section-sub {
+    text-align: center;
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 40px;
+    padding: 10px 24px;
+    background: #3c3839;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+.back-btn:hover {
+    opacity: 0.9;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.product-card {
+    border: 1px solid #dadddc;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(60,56,57,0.1);
+}
+
+.product-img {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    background: #f8f8f8;
+}
+.product-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 22px;
+}
+.product-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.product-spec {
+    border-top: 1px solid #dadddc;
+    padding-top: 15px;
+    margin-bottom: 18px;
+}
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 6px 0;
+}
+.spec-label {
+    font-weight: 600;
+}
+
+.wa-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #3c3839;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+.wa-btn:hover {
+    opacity: 0.9;
+}
+
+footer {
+    background: #3c3839;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #3c3839;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    z-index: 999;
+    text-decoration: none;
+}
+
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="container nav">
+        <a href="index.html" class="logo">NEWKINYO</a>
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <a href="products.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Products</a>
+        <h2 class="section-title">African Net Sponge</h2>
+        <p class="section-sub">High-quality bath accessories with reliable quality & competitive price</p>
+
+        <div class="product-grid">
+            <!-- 产品 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african1.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Standard Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Stretch / Quick Dry</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Standard Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <!-- 产品 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african2.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Large Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Big Size / Soft</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>70*22cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Large Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <!-- 产品 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african3.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Mini Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Portable / Cute</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>50*18cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Mini Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <!-- 产品 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african4.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Color Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Multi-color</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Color Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <!-- 产品 5 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african5.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Extra Stretch Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Super Elastic</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Extra Stretch Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <!-- 产品 6 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african6.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Classic Design</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Classic Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Newkinyo. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/8613510756714" class="whatsapp-float" target="_blank">💬</a>
+</body>
+</html>

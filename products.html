@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | Newkinyo</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    color: #3c3839;
+    line-height: 1.8;
+    background: #fff;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏 */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #3c3839;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.nav-menu a {
+    margin-left: 35px;
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+}
+.nav-menu a.active {
+    color: #3c3839;
+    font-weight: 600;
+}
+
+/* 通用区块 */
+.section {
+    padding: 70px 0;
+}
+.section-title {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #3c3839;
+}
+.section-sub {
+    text-align: center;
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* 分类标签 */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 50px;
+}
+.tab-item {
+    padding: 10px 28px;
+    border: 1px solid #3c3839;
+    border-radius: 30px;
+    color: #3c3839;
+    background: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.tab-item.active,
+.tab-item:hover {
+    background-color: #3c3839;
+    color: #fff;
+}
+
+/* 产品网格 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+/* 产品卡片 */
+.product-card {
+    border: 1px solid #dadddc;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(60,56,57,0.1); /* 修复阴影颜色值错误 */
+}
+
+/* 1:1 正方形图片，完整展示不变形 */
+.product-img {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    background: #f8f8f8;
+}
+.product-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 22px;
+}
+.product-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.product-spec {
+    border-top: 1px solid #dadddc;
+    padding-top: 15px;
+    margin-bottom: 18px;
+}
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 6px 0;
+}
+.spec-label {
+    font-weight: 600;
+}
+
+/* 产品WhatsApp按钮 */
+.wa-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #3c3839;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+.wa-btn:hover {
+    opacity: 0.9;
+}
+
+/* See More 独立按钮（外贸独立站主流样式） */
+.see-more-wrap {
+    text-align: center;
+    margin-top: 45px;
+}
+.see-more-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #3c3839;
+    border-radius: 4px;
+    color: #3c3839;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.see-more-btn:hover {
+    background-color: #3c3839;
+    color: #fff;
+}
+
+/* 隐藏非激活分类 */
+.category-content {
+    display: none;
+}
+.category-content.active {
+    display: grid;
+}
+
+/* 页脚 */
+footer {
+    background: #3c3839;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* 悬浮WhatsApp按钮 */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #3c3839;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    z-index: 999;
+    text-decoration: none;
+}
+
+/* 响应式适配 */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* 修复响应式语法错误 max -> max-width */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+<body>
+<!-- 导航栏 -->
+<header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html" class="logo">NEWKINYO</a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-sub">High-quality bath accessories with reliable quality & competitive price</p>
+
+        <!-- 分类标签 -->
+        <div class="category-tabs">
+            <div class="tab-item active" data-tab="viscose">100% Viscose Glove</div>
+            <div class="tab-item" data-tab="sponge">Sponge Gloves</div>
+            <div class="tab-item" data-tab="net">African Net Sponge</div>
+        </div>
+
+        <!-- 100% Viscose Glove 分类容器 -->
+        <div class="category-content product-grid active" data-tab="viscose" data-content="viscose">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/viscose1.jpg" alt="Viscose Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">100% Viscose Glove White</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Soft / Skin-friendly</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Logo & Package</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for 100% Viscose Glove White" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/viscose2.jpg" alt="Viscose Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">100% Viscose Glove Black</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Durable / Reusable</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Logo & Package</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for 100% Viscose Glove Black" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/viscose3.jpg" alt="Viscose Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">100% Viscose Glove Pink</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Gentle Exfoliation</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Logo & Package</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for 100% Viscose Glove Pink" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/viscose4.jpg" alt="Viscose Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Thickened Viscose Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Thick / Long Lasting</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Logo & Package</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Thickened Viscose Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/viscose5.jpg" alt="Viscose Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Slim Viscose Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Light & Portable</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Logo & Package</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Slim Viscose Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/viscose6.jpg" alt="Viscose Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Viscose Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Comfortable / Durable</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Logo & Package</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Classic Viscose Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sponge Gloves 分类容器 -->
+        <div class="category-content product-grid" data-tab="sponge" data-content="sponge">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/sponge1.jpg" alt="Sponge Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Basic Sponge Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Sponge + Nylon</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Foam Rich</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Basic Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/sponge2.jpg" alt="Sponge Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Soft Sponge Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Sponge + Nylon</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Skin-friendly</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Soft Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/sponge3.jpg" alt="Sponge Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Thick Sponge Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Sponge + Nylon</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>High Absorption</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Thick Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/sponge4.jpg" alt="Sponge Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Colorful Sponge Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Sponge + Nylon</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Beautiful Design</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Colorful Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/sponge5.jpg" alt="Sponge Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Portable Sponge Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Sponge + Nylon</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Light Weight</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Portable Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/sponge6.jpg" alt="Sponge Glove">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Durable Sponge Glove</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Sponge + Nylon</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>300 Pairs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Long Service Life</span></div>
+                        <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Durable Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- African Net Sponge 分类容器 -->
+        <div class="category-content product-grid" data-tab="net" data-content="net">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african1.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Standard Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Stretch / Quick Dry</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Standard Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african2.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Large Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Big Size / Soft</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>70*22cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Large Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african3.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Mini Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Portable / Cute</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>50*18cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Mini Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african4.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Color Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Multi-color</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Color Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african5.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Extra Stretch Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Super Elastic</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Extra Stretch Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/african6.jpg" alt="African Net Sponge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Net Sponge</h3>
+                    <div class="product-spec">
+                        <div class="spec-row"><span class="spec-label">Material</span><span>Nylon Mesh</span></div>
+                        <div class="spec-row"><span class="spec-label">MOQ</span><span>500 Pcs</span></div>
+                        <div class="spec-row"><span class="spec-label">Feature</span><span>Classic Design</span></div>
+                        <div class="spec-row"><span class="spec-label">Size</span><span>65*20cm</span></div>
+                    </div>
+                    <a href="https://wa.me/8613510756714?text=Quote for Classic Net Sponge" class="wa-btn" target="_blank">Get Quote</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 统一的See More按钮 -->
+        <div class="see-more-wrap">
+            <a href="viscose.html" id="seeMoreBtn" class="see-more-btn">See More</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Newkinyo. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- 悬浮WhatsApp按钮 -->
+<a href="https://wa.me/8613510756714" class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 定义最大展示数量（改为6个）
+    const MAX_SHOW_NUM = 6;
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+    // 分类路径映射
+    const tabPathMap = {
+        'viscose': 'viscose.html',
+        'sponge': 'sponge.html',
+        'net': 'african.html'
+    };
+
+    // 分类标签切换
+    const tabItems = document.querySelectorAll('.tab-item');
+    const contentItems = document.querySelectorAll('.category-content');
+    
+    // 更新See More按钮链接
+    function updateSeeMoreLink(activeTab) {
+        seeMoreBtn.href = tabPathMap[activeTab] || tabPathMap['viscose'];
+    }
+
+    tabItems.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // 切换激活状态
+            tabItems.forEach(t => t.classList.remove('active'));
+            contentItems.forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            const currentTab = tab.dataset.tab;
+            document.querySelector(`[data-content="${currentTab}"]`).classList.add('active');
+            
+            // 更新See More链接
+            updateSeeMoreLink(currentTab);
+            // 切换后重新执行产品截取逻辑
+            filterProductCards();
+        });
+    });
+
+    // 核心函数：自动遍历每个分类，仅展示前 N 个产品
+    function filterProductCards() {
+        contentItems.forEach(box => {
+            // 只筛选产品卡片，排除 See More 区域
+            const productList = box.querySelectorAll('.product-card');
+            // 遍历：小于等于6个显示，大于6个自动隐藏
+            productList.forEach((card, index) => {
+                if (index < MAX_SHOW_NUM) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // 初始化：设置默认激活的tab链接
+    const defaultActiveTab = document.querySelector('.tab-item.active').dataset.tab;
+    updateSeeMoreLink(defaultActiveTab);
+    
+    // 页面初始化执行
+    filterProductCards();
+    // 窗口大小变化重新适配（防止布局错乱）
+    window.addEventListener('resize', filterProductCards);
+});
+</script>
+</body>
+</html>

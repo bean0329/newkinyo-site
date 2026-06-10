@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Newkinyo</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    color: #3c3839;
+    line-height: 1.8;
+    background: #fff;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏 */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #3c3839;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.nav-menu a {
+    margin-left: 35px;
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+}
+.nav-menu a.active {
+    color: #3c3839;
+    font-weight: 600;
+}
+
+/* 通用区块样式 */
+.section {
+    padding: 80px 0;
+}
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3c3839;
+}
+.section-sub {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bg-gray {
+    background-color: #dadddc;
+}
+
+/* 头部介绍区块 - 背景图 */
+.intro-section {
+    position: relative;
+    background: url('assets/about-bg.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 120px 0;
+    text-align: center;
+}
+.intro-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 56, 57, 0.7);
+}
+.intro-section .container {
+    position: relative;
+    z-index: 1;
+}
+.intro-section .section-title {
+    color: #fff;
+    font-size: 42px;
+}
+.intro-section .section-sub {
+    color: #eee;
+    font-size: 20px;
+}
+.intro-desc {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 2;
+    color: #fff;
+}
+
+/* ========== Our Journey 独立背景图样式 ========== */
+.journey-section {
+    position: relative;
+    background: url('assets/journey-bg.jpg') center/cover no-repeat;
+    padding: 80px 0;
+}
+.journey-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(218, 221, 220, 0.85);
+}
+.journey-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* 核心数据板块 */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.data-item .num {
+    font-size: 42px;
+    font-weight: 700;
+    color: #3c3839;
+    margin-bottom: 8px;
+}
+.data-item .txt {
+    font-size: 16px;
+    color: #555;
+}
+
+/* 时间轴（带图标） */
+.timeline-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+}
+.timeline-wrap::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #3c3839;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+.timeline-item::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: -42px;
+    top: 3px;
+    font-size: 18px;
+    color: #3c3839;
+    background: #dadddc;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.timeline-year {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3c3839;
+    margin-bottom: 8px;
+}
+.timeline-content {
+    font-size: 16px;
+    color: #444;
+}
+
+/* 工厂&优势图标板块 */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+.feature-item {
+    text-align: center;
+    padding: 25px 15px;
+}
+.feature-item i {
+    font-size: 36px;
+    color: #3c3839;
+    margin-bottom: 15px;
+}
+.feature-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.feature-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* 资质认证 */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+.cert-item {
+    background: #fff;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #dadddc;
+}
+.cert-item i {
+    font-size: 32px;
+    color: #3c3839;
+    margin-bottom: 12px;
+}
+.cert-item h4 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+.cert-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* 团队介绍 */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+.team-item {
+    text-align: center;
+}
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #dadddc;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #3c3839;
+}
+.team-item h4 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.team-item .post {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 企业理念 */
+.idea-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    background: #dadddc;
+    border-radius: 6px;
+}
+.idea-text {
+    font-size: 17px;
+    line-height: 2;
+}
+
+/* 页脚 */
+footer {
+    background: #3c3839;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* 悬浮WhatsApp按钮 */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #3c3839;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    z-index: 999;
+    text-decoration: none;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .intro-section .section-title {
+        font-size: 32px;
+    }
+    .data-grid, .feature-grid, .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline-wrap {
+        padding-left: 20px;
+    }
+    .timeline-wrap::before {
+        left: 5px;
+    }
+    .timeline-item::before {
+        left: -37px;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+<body>
+<!-- 导航栏 -->
+<header>
+    <div class="container nav">
+        <a href="index.html" class="logo">NEWKINYO</a>
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</header>
+
+<!-- 带背景图的品牌介绍 -->
+<section class="intro-section">
+    <div class="container">
+        <h2 class="section-title">About Newkinyo</h2>
+        <p class="section-sub">Professional Exfoliating Bath Glove Manufacturer Based in Shenzhen</p>
+        <div class="intro-wrap">
+            <p class="intro-desc">
+                Newkinyo is a professional manufacturer focusing on the production and sales of exfoliating bath gloves. Located in Shenzhen, China, we have rich production experience and complete production lines. More than half of the top 100 sellers in Amazon exfoliating glove category choose us as their long-term supplier. We adhere to 100% full inspection before delivery to guarantee stable and reliable product quality.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 核心数据 -->
+<section class="section">
+    <div class="container">
+        <div class="data-grid">
+            <div class="data-item">
+                <div class="num">10+</div>
+                <div class="txt">Years Experience</div>
+            </div>
+            <div class="data-item">
+                <div class="num">100+</div>
+                <div class="txt">Product Types</div>
+            </div>
+            <div class="data-item">
+                <div class="num">50+</div>
+                <div class="txt">Cooperating Countries</div>
+            </div>
+            <div class="data-item">
+                <div class="num">500+</div>
+                <div class="txt">Global Clients</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 发展历程（新增独立背景图） -->
+<section class="journey-section">
+    <div class="container">
+        <h2 class="section-title">Our Journey</h2>
+        <p class="section-sub">Continuous growth and professional development over the years</p>
+        <div class="timeline-wrap">
+            <div class="timeline-item">
+                <div class="timeline-year">2014</div>
+                <div class="timeline-content">
+                    Officially established the factory in Shenzhen, started the production of basic exfoliating bath gloves, and served local wholesale customers.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-content">
+                    Expanded production scale, introduced advanced textile equipment, and began to develop overseas markets.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2020</div>
+                <div class="timeline-content">
+                    Became a core supplier for many Amazon sellers, products widely sold in North America, Europe and Southeast Asia.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2023</div>
+                <div class="timeline-content">
+                    Completed full quality inspection system, passed multiple international certifications, launched OEM & ODM customized services.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-content">
+                    Stable supply for more than half of Amazon Top 100 exfoliating glove sellers, products trusted by global buyers.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 工厂实力 & 服务优势 -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Our Factory & Advantages</h2>
+        <p class="section-sub">One-stop service from production, quality control to delivery</p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <i class="fas fa-industry"></i>
+                <h4>Factory Direct</h4>
+                <p>Direct manufacturer, no middlemen, competitive price and stable supply.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <h4>Full Inspection</h4>
+                <p>100% full inspection before shipment, strictly control every detail.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-palette"></i>
+                <h4>Custom Service</h4>
+                <p>Support custom logo, packaging, size and personalized design.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shipping-fast"></i>
+                <h4>On-time Delivery</h4>
+                <p>Complete production lines to ensure orders are delivered on time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 资质认证 -->
+<section class="section bg-gray">
+    <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-sub">Products comply with international safety and quality standards</p>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <i class="fas fa-certificate"></i>
+                <h4>REACH Compliant</h4>
+                <p>Meet EU environmental protection and safety requirements.</p>
+            </div>
+            <div class="cert-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4>ROHS Standard</h4>
+                <p>Strictly limit harmful substances, safe for skin contact.</p>
+            </div>
+            <div class="cert-item">
+                <i class="fas fa-award"></i>
+                <h4>OEKO-TEX</h4>
+                <p>Textile safety certification, friendly to sensitive skin.</p>
+            </div>
+            <div class="cert-item">
+                <i class="fas fa-handshake"></i>
+                <h4>BSCI Audited</h4>
+                <p>Standard factory management, support large brand orders.</p>
+            </div>
+            <div class="cert-item">
+                <i class="fas fa-flask"></i>
+                <h4>SGS Tested</h4>
+                <p>Third-party testing, reliable product quality.</p>
+            </div>
+            <div class="cert-item">
+                <i class="fas fa-globe"></i>
+                <h4>CE Approved</h4>
+                <p>Comply with European market access standards.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 团队介绍 -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-sub">Professional team to serve global customers</p>
+        <div class="team-grid">
+            <div class="team-item">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>Founder</h4>
+                <div class="post">Factory Manager</div>
+            </div>
+            <div class="team-item">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>Sales Manager</h4>
+                <div class="post">Overseas Business</div>
+            </div>
+            <div class="team-item">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>QC Director</h4>
+                <div class="post">Quality Control</div>
+            </div>
+            <div class="team-item">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>Designer</h4>
+                <div class="post">Product & Package</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 企业理念 -->
+<section class="section bg-gray">
+    <div class="container">
+        <h2 class="section-title">Our Philosophy</h2>
+        <div class="idea-box">
+            <p class="idea-text">
+                We always take "Quality First, Customer Oriented" as our core philosophy. From raw material selection to finished product delivery, we strictly control every process. We are committed to providing high-quality exfoliating bath gloves and professional one-stop solutions for global merchants, and grow together with every partner.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Newkinyo. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- 悬浮WhatsApp按钮 -->
+<a href="https://wa.me/8613510756714?text=Hello I want to inquire about exfoliating bath gloves wholesale." class="whatsapp-float" target="_blank">💬</a>
+</body>
+</html>
