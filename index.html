@@ -1,86 +1,942 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Newkinyo | Premium Exfoliating Bath Glove Manufacturer</title>
-<meta name="description" content="Newkinyo is a leading exfoliating bath glove manufacturer based in Shenzhen, supplying over half of Amazon Top 100 sellers. 100% full inspection before shipment.">
-<link rel="canonical" href="https://newkinyo.com">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{color:#333;line-height:1.8;background:#fff}
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:0;z-index:99}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-size:26px;font-weight:700;color:#111;text-decoration:none;letter-spacing:1px}
-.nav-menu a{margin-left:35px;text-decoration:none;color:#555;font-size:15px;font-weight:500}
-.nav-menu a.active{color:#007bff;font-weight:600}
-.hero{background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('assets/banner.jpg') center/cover no-repeat;height:550px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
-.hero h1{font-size:48px;margin-bottom:15px}
-.hero p{font-size:20px;max-width:700px;margin:0 auto 30px}
-.btn{display:inline-block;padding:14px 35px;background:#007bff;color:#fff;text-decoration:none;border-radius:4px}
-.section{padding:80px 0}
-.section-title{text-align:center;font-size:32px;margin-bottom:60px;color:#111;position:relative}
-.section-title::after{content:"";display:block;width:80px;height:3px;background:#007bff;margin:12px auto 0}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
-.product-card{border:1px solid #eee;border-radius:8px;overflow:hidden}
-.product-card img{width:100%;height:320px;object-fit:cover}
-.product-info{padding:25px}
-.advantage{background:#f8f9fa}
-.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;text-align:center}
-.adv-item{padding:30px 20px}
-.client{background:#111;color:#fff;text-align:center}
-footer{background:#111;color:#fff;text-align:center;padding:30px 0}
-.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:999;text-decoration:none}
-@media(max-width:768px){.nav-menu{display:none}.hero h1{font-size:32px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newkinyo | Premium Exfoliating Bath Glove Manufacturer</title>
+    <meta name="description" content="Newkinyo is a leading exfoliating bath glove manufacturer based in Shenzhen, supplying over half of Amazon Top 100 sellers. 100% full inspection before shipment.">
+    <link rel="canonical" href="https://newkinyo.com">
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.8;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            padding: 10px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3c3839;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        /* 移动端导航菜单按钮 */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3c3839;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a.active {
+            color: #3c3839;
+            font-weight: 600;
+        }
+
+        /* 英雄区 - 高度改为原2/3 */
+      .hero {
+    position: relative;
+    height: 700px; /* 固定为图片原始高度 */
+    max-height: 80vh; /* 大屏不超高 */
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* cover：全屏铺满，仅裁少量上下区域 */
+    background: linear-gradient(rgba(0, 0,0,0.35), rgba(0, 0,0,0.35)), url('assets/banner.jpg') center / cover no-repeat;
+    background-attachment: scroll;
+    z-index: -1;
+}
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #3c3839;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(60, 56, 57, 0.3);
+        }
+
+        /* 通用区块 */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 80px;
+            color: #3c3839;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #3c3839;
+            margin: 20px auto 0;
+        }
+
+        /* 核心优势 - 大屏强制单行 */
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .adv-item {
+            padding: 40 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .adv-item i {
+            font-size: 40px;
+            color: #3c3839;
+            margin-bottom: 25px;
+        }
+
+        .adv-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .adv-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .adv-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 产品展示区 */
+        .products {
+            background: #f8f9fa;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0.05);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Company Profile + 数据统计 版块 */
+        .about-section {
+            background-color: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 80px 0;
+            position: relative;
+        }
+        .about-text {
+            position: relative;
+            z-index: 2;
+        }
+        .about-title {
+            font-size: 36px;
+            color: #3c3839;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        .about-desc {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        .read-more-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #3c3839 0%, #5a5657 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        .read-more-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .about-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 180px;
+            font-weight: 900;
+            color: rgba(60, 56, 57, 0.05);
+            white-space: nowrap;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .about-image {
+            position: relative;
+            z-index: 2;
+        }
+        .factory-img {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .factory-img::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(90deg, #3c3839 0%, #5a5657 100%);
+            border-radius: 0 0 20px 0;
+            z-index: -1;
+        }
+
+        /* 数据统计栏 */
+        .stats-bar {
+            background: linear-gradient(90deg, #3c3839 0%, #5a5657 100%);
+            padding: 40px 0;
+            color: #fff;
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .stat-text h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .stat-text p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        /* 客户信任区 */
+        .client {
+            background: #111;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .client h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .client p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* 联系区 */
+        .contact-section {
+            background: #3c3839;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-light {
+            background: #fff;
+            color: #3c3839;
+        }
+
+        .btn-light:hover {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #3c3839;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-col ul li a:hover {
+            color: #3c3839;
+            padding-left: 5px;
+        }
+
+        .footer-col .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-col .contact-info i {
+            font-size: 18px;
+            color: #3c3839;
+            margin-right: 15px;
+            width: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* 悬浮WhatsApp按钮 */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            z-index: 999;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .hero {
+                height: 48vh;
+                min-height: 360px;
+            }
+            .section {
+                padding: 80px 0;
+            }
+            /* 平板：优势改为2列 */
+            .adv-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-row {
+                grid-template-columns: 1fr;
+                padding: 60px 0;
+            }
+            .about-bg-text {
+                font-size: 120px;
+            }
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* 移动端导航 */
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 250px;
+                height: 100vh;
+                background: #fff;
+                flex-direction: column;
+                padding: 80px 30px;
+                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+                transform: translateX(100%);
+                z-index: 9999;
+            }
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+            .nav-menu a {
+                margin: 15px 0;
+                font-size: 16px;
+            }
+
+            .hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            .hero-bg {
+                background-attachment: scroll;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .section-title {
+                font-size: 30px;
+                margin-bottom: 60px;
+            }
+            .section {
+                padding: 60px 0;
+            }
+            .product-img {
+                height: 250px;
+            }
+            .about-title {
+                font-size: 28px;
+            }
+            .about-bg-text {
+                font-size: 80px;
+            }
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .stat-item {
+                justify-content: flex-start;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 35vh;
+                min-height: 260px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .btn {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+            .section-title {
+                font-size: 26px;
+            }
+            .adv-item {
+                padding: 30px 20px;
+            }
+            .footer-grid {
+                gap: 30px;
+            }
+            /* 手机端优势单列 */
+            .adv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="container nav">
-<a href="index.html" class="logo">NEWKINYO</a>
-<div class="nav-menu">
-<a href="index.html" class="active">Home</a>
-<a href="products.html">Products</a>
-<a href="about.html">About Us</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
-</header>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">NEWKINYO</a>
+            <!-- 移动端菜单按钮 -->
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- 导航菜单 -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
 
-<section class="hero">
-<div class="container">
-<h1>PREMIUM EXFOLIATING BATH GLOVES</h1>
-<p>Leading Manufacturer in Shenzhen | Trusted by Amazon Top Sellers</p>
-<a href="contact.html" class="btn">Contact Us</a>
-</div>
-</section>
+    <!-- 英雄区 -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>PREMIUM EXFOLIATING BATH GLOVES</h1>
+            <p>Leading Manufacturer in Guangdong | Trusted by Amazon Top Sellers</p>
+            <a href="contact.html" class="btn">Contact Us Now</a>
+        </div>
+    </section>
 
-<section class="section">
-<div class="container">
-<h2 class="section-title">Our Strength</h2>
-<div class="adv-grid">
-<div class="adv-item"><h3>Shenzhen Factory</h3><p>Professional exfoliating glove manufacturer with full production line.</p></div>
-<div class="adv-item"><h3>Amazon Top Supplier</h3><p>Over half of Amazon Top 100 sellers are our long-term customers.</p></div>
-<div class="adv-item"><h3>100% Full Inspection</h3><p>Every product is checked before delivery to ensure quality.</p></div>
-<div class="adv-item"><h3>OEM & ODM</h3><p>Custom logo, packaging, design and private label service.</p></div>
-</div>
-</div>
-</section>
+    <!-- 核心优势区（大屏4个一行） -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Core Strengths</h2>
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <i class="fas fa-industry"></i>
+                    <h3>Shenzhen Factory</h3>
+                    <p>Professional exfoliating glove manufacturer with full production line, ensuring complete control over quality and delivery.</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Amazon Top Supplier</h3>
+                    <p>Over half of Amazon Top 100 sellers are our long-term customers, proving our product quality and service.</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>100% Full Inspection</h3>
+                    <p>Every product is checked before delivery to ensure zero defective products reach our customers.</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>OEM & ODM</h3>
+                    <p>Custom logo, packaging, design and private label service to meet all your brand customization needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section client">
-<div class="container">
-<h2>Trusted by Global Sellers</h2>
-<p>We provide stable quality, competitive price and on-time delivery for wholesalers, brand owners and Amazon sellers. Our products are exported worldwide.</p>
-</div>
-</section>
+    <!-- 产品展示区 -->
+    <section class="section products">
+        <div class="container">
+            <h2 class="section-title">Our Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="assets/viscose-detail1.jpg" alt="Premium Exfoliating Bath Glove">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Exfoliating Glove</h3>
+                        <p>High-quality material for gentle yet effective exfoliation, suitable for daily use.</p>
+                        <a href="viscose.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="assets/sponge2.jpg" alt="Custom Sponge Gloves">
+                    </div>
+                    <div class="product-info">
+                        <h3>Custom Sponge Gloves</h3>
+                        <p>Personalized design with your brand logo, perfect for private label branding.</p>
+                        <a href="sponge.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="assets/african4.jpg" alt="African Net Back Scrubber">
+                    </div>
+                    <div class="product-info">
+                        <h3>African Net Back Scrubber</h3>
+                        <p>Complete bath exfoliation kit with customized packaging for premium market.</p>
+                        <a href="african.html" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-<div class="container">
-<p>&copy; 2025 Newkinyo. All Rights Reserved.</p>
-</div>
-</footer>
+    <!-- Company Profile + 数据统计版块 -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-row">
+                <!-- 左侧文字部分 -->
+                <div class="about-text">
+                    <h2 class="about-title">Company Profile</h2>
+                    <p class="about-desc">
+                        NEWKINYO is a professional exfoliating bath glove manufacturer based in Shenzhen, China. With over 10 years of experience in the industry, we are proud to be the trusted supplier for more than half of Amazon Top 100 sellers. 
+                    </p>
+                    <p class="about-desc">
+                        Our factory covers an area of 7,00 square meters, with 1dedicated production workshops and a 5,00-square-meter warehouse. We are equipped with over 100 sets of advanced production equipment, enabling us to provide OEM/ODM services with stable quality and competitive prices.
+                    </p>
+                    <a href="about.html" class="read-more-btn">Read More →</a>
+                    <!-- 背景大字装饰 -->
+                    <div class="about-bg-text">ABOUT US</div>
+                </div>
+                <!-- 右侧图片部分 -->
+                <div class="about-image">
+                    <img src="assets/factory.jpg" alt="NEWKINYO Factory" class="factory-img">
+                </div>
+            </div>
+        </div>
 
-<a href="https://wa.me/8613510756714?text=Hello%20I%20want%20to%20inquire%20about%20exfoliating%20gloves" class="whatsapp-float" target="_blank">💬</a>
+        <!-- 下方数据统计栏 -->
+        <div class="stats-bar">
+            <div class="container stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="stat-text">
+                        <h3>500+</h3>
+                        <p>Square Meters Covering Area</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="stat-text">
+                        <h3>100+</h3>
+                        <p>Production Equipments</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="stat-text">
+                        <h3>3+</h3>
+                        <p>Professional Designers</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="stat-text">
+                        <h3>7*24</h3>
+                        <p>Hours Online Service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户信任区 -->
+    <section class="client">
+        <div class="container">
+            <h2>Trusted by Global Sellers</h2>
+            <p>We provide stable quality, competitive price and on-time delivery for wholesalers, brand owners and Amazon sellers. Our products are exported to Europe, North America, Australia and other regions worldwide.</p>
+        </div>
+    </section>
+
+    <!-- 联系区 -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Ready to Start Your Order?</h2>
+            <p>Contact our sales team today to get a competitive quote and learn more about our customization options.</p>
+            <a href="contact.html" class="btn btn-light">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="about.html">Company Profile</a></li>
+                        <li><a href="about.html#factory">Our Factory</a></li>
+                        <li><a href="about.html#certification">Certifications</a></li>
+                        <li><a href="about.html#team">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html#classic">Classic Gloves</a></li>
+                        <li><a href="products.html#custom">Custom Gloves</a></li>
+                        <li><a href="products.html#sets">Exfoliating Sets</a></li>
+                        <li><a href="products.html#oem">OEM/ODM Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>2nd Floor, Factory Building No. 1, No. 16 Kangzheng Road, Danzhutou Community, Nanwan Street, Longgang District</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>+86 135 1075 6714</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@newkinyo.com</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+86 135 1075 6714</span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Newkinyo. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp悬浮按钮 -->
+    <a href="https://wa.me/8613510756714?text=Hello%20I%20want%20to%20inquire%20about%20exfoliating%20gloves" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 移动端导航交互脚本 -->
+    <script>
+        // 导航菜单切换
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 点击菜单外区域关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
