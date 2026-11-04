@@ -276,10 +276,10 @@ footer {
         <h2 class="section-title">Our Products</h2>
         <p class="section-sub">High-quality bath accessories with reliable quality & competitive price</p>
 
-        <!-- 分类标签 -->
+        <!-- 分类标签：只保留第一个active -->
         <div class="category-tabs">
             <div class="tab-item active" data-tab="viscose">100% Viscose Glove</div>
-            <div class="tab-item" data-tab="bath mitts">Brand Customized</div>
+            <div class="tab-item" data-tab="bath-mitts">Brand Customized</div>
             <div class="tab-item" data-tab="sponge">Sponge Gloves</div>
             <div class="tab-item" data-tab="net">African Net Sponge</div>
         </div>
@@ -387,14 +387,14 @@ footer {
 
         
   <!-- brand customized 分类容器 -->       
-        <div class="category-content product-grid" data-tab="bath mitts" data-content="bath mitts">
+        <div class="category-content product-grid" data-tab="bath-mitts" data-content="bath-mitts">
            <!-- 产品 1 -->
             <div class="product-card">
                 <div class="product-img">
                     <a href="design-detail.html"><img src="assets/design1.jpg" alt="Viscose bath Glove"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name"><a href="viscose-detail.html">Your Design On Bath Mitts</a></h3>
+                    <h3 class="product-name"><a href="design-detail.html">Your Design On Bath Mitts</a></h3>
                     <div class="product-spec">
                         <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
                         <div class="spec-row"><span class="spec-label">MOQ</span><span>1000pcs</span></div>
@@ -410,7 +410,7 @@ footer {
                     <a href="design-detail.html"><img src="assets/design2.jpg" alt="Viscose Glove"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name"><a href="viscose-detail.html">Your Design On Bath Mitts</a></h3>
+                    <h3 class="product-name"><a href="design-detail.html">Your Design On Bath Mitts</a></h3>
                     <div class="product-spec">
                         <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
                         <div class="spec-row"><span class="spec-label">MOQ</span><span>1000pcs</span></div>
@@ -426,7 +426,7 @@ footer {
                     <a href="design-detail.html"><img src="assets/design3.jpg" alt="Viscose Glove"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name"><a href="viscose-detail.html">Your Design On Bath Mitts</a></h3>
+                    <h3 class="product-name"><a href="design-detail.html">Your Design On Bath Mitts</a></h3>
                     <div class="product-spec">
                         <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
                         <div class="spec-row"><span class="spec-label">MOQ</span><span>1000pcs</span></div>
@@ -442,7 +442,7 @@ footer {
                     <a href="design-detail.html"><img src="assets/design4.jpg" alt="Viscose Glove"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name"><a href="viscose-detail.html">Your Design On Bath Mitts</a></h3>
+                    <h3 class="product-name"><a href="design-detail.html">Your Design On Bath Mitts</a></h3>
                     <div class="product-spec">
                         <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
                         <div class="spec-row"><span class="spec-label">MOQ</span><span>1000pcs</span></div>
@@ -458,7 +458,7 @@ footer {
                     <a href="design-detail.html"><img src="assets/design5.jpg" alt="Viscose Glove"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name"><a href="viscose-detail.html">Your Design On Bath Mitts</a></h3>
+                    <h3 class="product-name"><a href="design-detail.html">Your Design On Bath Mitts</a></h3>
                     <div class="product-spec">
                         <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
                         <div class="spec-row"><span class="spec-label">MOQ</span><span>1000pcs</span></div>
@@ -474,7 +474,7 @@ footer {
                     <a href="design-detail.html"><img src="assets/design6.jpg" alt="Viscose Glove"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name"><a href="viscose-detail.html">Your Design On Bath Mitts</a></h3>
+                    <h3 class="product-name"><a href="design-detail.html">Your Design On Bath Mitts</a></h3>
                     <div class="product-spec">
                         <div class="spec-row"><span class="spec-label">Material</span><span>100% Viscose</span></div>
                         <div class="spec-row"><span class="spec-label">MOQ</span><span>1000pcs</span></div>
@@ -696,9 +696,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // 定义最大展示数量（改为6个）
     const MAX_SHOW_NUM = 6;
     const seeMoreBtn = document.getElementById('seeMoreBtn');
-    // 分类路径映射
+    // 分类路径映射（key改成bath-mitts，无空格）
     const tabPathMap = {
         'viscose': 'viscose.html',
+        'bath-mitts': 'design-detail.html',
         'sponge': 'sponge.html',
         'net': 'african.html'
     };
