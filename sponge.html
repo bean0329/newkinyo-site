@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sponge Gloves | Newkinyo</title>
+<title>Custom Sponge Glove Wholesale | OEM Bath Sponge Mitts, MOQ 300 Pairs | Newkinyo</title>
+<meta name="description" content="OEM sponge gloves and bath sponge mitts with foam core and nylon scrubbing face. 6 constructions, MOQ 300 pairs, custom logo and packaging. Shenzhen factory, FBA-ready.">
+<link rel="canonical" href="https://newkinyo.com/sponge">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 * {
@@ -53,6 +55,19 @@ header {
 .nav-menu a.active {
     color: #3c3839;
     font-weight: 600;
+}
+
+/* 视觉隐藏（给搜索引擎和屏幕阅读器） */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .section {
@@ -157,6 +172,196 @@ header {
     opacity: 0.9;
 }
 
+/* ===== 折叠区：买家不点击则全部收起 ===== */
+.more-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #dadddc;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+.more-info > summary {
+    cursor: pointer;
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3c3839;
+    list-style: none;
+    background: #fafafa;
+    position: relative;
+}
+.more-info > summary::-webkit-details-marker { display: none; }
+.more-info > summary::after {
+    content: "+";
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-weight: 400;
+    color: #888;
+}
+.more-info[open] > summary::after { content: "−"; }
+.more-info[open] > summary { border-bottom: 1px solid #dadddc; }
+.more-info .inner { padding: 40px 24px 10px; }
+
+/* 概要段落 */
+.intro-block {
+    max-width: 860px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: #444;
+    text-align: center;
+}
+
+/* 数据条 */
+.fact-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 28px 20px;
+}
+.fact-item { text-align: center; }
+.fact-item h3 { font-size: 24px; color: #3c3839; margin-bottom: 4px; }
+.fact-item p { font-size: 13px; color: #666; margin: 0; }
+
+/* 通用内容块 */
+.content-block { max-width: 1000px; margin: 0 auto 50px; }
+.content-block:last-child { margin-bottom: 0; }
+.block-title {
+    font-size: 22px;
+    margin: 0 0 20px;
+    padding-left: 14px;
+    border-left: 4px solid #3c3839;
+}
+
+/* 规格表 */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+.spec-table th, .spec-table td {
+    border: 1px solid #dadddc;
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+}
+.spec-table th {
+    background: #3c3839;
+    color: #fff;
+    font-weight: 600;
+    width: 32%;
+}
+.spec-table tr:nth-child(even) td { background: #fafafa; }
+
+/* 价格阶梯 */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+.price-table th, .price-table td {
+    border: 1px solid #dadddc;
+    padding: 12px 16px;
+    text-align: center;
+}
+.price-table th { background: #3c3839; color: #fff; }
+.price-table td:first-child { font-weight: 600; text-align: left; }
+
+/* 定制选项 */
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.option-card {
+    border: 1px solid #dadddc;
+    border-radius: 8px;
+    padding: 20px;
+}
+.option-card h4 { font-size: 16px; margin-bottom: 10px; color: #3c3839; }
+.option-card ul { list-style: none; font-size: 14px; color: #555; }
+.option-card li { margin: 6px 0; padding-left: 14px; position: relative; }
+.option-card li::before {
+    content: "·";
+    position: absolute;
+    left: 3px;
+    font-weight: 700;
+}
+
+/* FAQ 折叠 */
+.faq-item {
+    border-bottom: 1px solid #dadddc;
+}
+.faq-item summary {
+    cursor: pointer;
+    padding: 16px 30px 16px 0;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: 400;
+    color: #888;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p {
+    font-size: 15px;
+    color: #555;
+    padding: 0 0 18px;
+}
+
+/* 内链推荐 */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.related-card {
+    display: block;
+    border: 1px solid #dadddc;
+    border-radius: 8px;
+    padding: 20px;
+    text-decoration: none;
+    color: #3c3839;
+    transition: box-shadow 0.3s;
+}
+.related-card:hover { box-shadow: 0 4px 12px rgba(60,56,57,0.1); }
+.related-card h4 { font-size: 15px; margin-bottom: 8px; }
+.related-card p { font-size: 13px; color: #666; margin: 0; }
+
+/* CTA */
+.cta-band {
+    background: #3c3839;
+    color: #fff;
+    text-align: center;
+    padding: 55px 0;
+}
+.cta-band h2 { font-size: 26px; margin-bottom: 12px; }
+.cta-band p { font-size: 16px; opacity: 0.9; margin-bottom: 24px; }
+.cta-band .wa-btn {
+    display: inline-block;
+    width: auto;
+    padding: 13px 40px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
 footer {
     background: #3c3839;
     color: #fff;
@@ -168,7 +373,7 @@ footer {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    background: #3c3839;
+    background: #25D366;
     color: #fff;
     width: 60px;
     height: 60px;
@@ -179,23 +384,24 @@ footer {
     font-size: 28px;
     z-index: 999;
     text-decoration: none;
+    box-shadow: 0 3px 10px rgba(37,211,102,0.35);
 }
 
 @media (max-width: 992px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .fact-bar { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
-    .section-title {
-        font-size: 28px;
-    }
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
+    .nav-menu { display: none; }
+    .section-title { font-size: 26px; }
+    .section { padding: 45px 0; }
+    .product-grid { grid-template-columns: 1fr; }
+    .block-title { font-size: 19px; }
+    .spec-table th { width: 42%; }
+    .spec-table th, .spec-table td { padding: 10px 12px; font-size: 14px; }
+    .more-info .inner { padding: 28px 16px 6px; }
+    .more-info > summary { padding: 16px 18px; font-size: 15px; }
+    .more-info > summary::after { right: 18px; }
     .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -205,6 +411,115 @@ footer {
     }
 }
 </style>
+
+<!-- JSON-LD: Product -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Custom Sponge Glove (Bath Sponge Mitt)",
+  "image": [
+    "https://newkinyo.com/assets/sponge1.jpg",
+    "https://newkinyo.com/assets/sponge2.jpg",
+    "https://newkinyo.com/assets/sponge3.jpg",
+    "https://newkinyo.com/assets/sponge4.jpg"
+  ],
+  "description": "OEM sponge gloves with foam core and nylon scrubbing face, 6 constructions, MOQ 300 pairs, custom logo and packaging. Made in Shenzhen, China.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Newkinyo"
+  },
+  "material": "Polyurethane foam + nylon",
+  "category": "Bath Sponge Glove",
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Newkinyo",
+    "url": "https://newkinyo.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Shenzhen",
+      "addressRegion": "Guangdong",
+      "addressCountry": "CN"
+    }
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "0.25",
+    "highPrice": "0.80",
+    "offerCount": "6",
+    "availability": "https://schema.org/InStock",
+    "eligibleQuantity": {
+      "@type": "QuantitativeValue",
+      "minValue": 300,
+      "unitText": "pairs"
+    },
+    "seller": {
+      "@type": "Organization",
+      "name": "Newkinyo"
+    }
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the MOQ for sponge gloves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MOQ is 300 pairs per style. Mixed styles can be combined in one order, and trial quantities below 300 pairs can be discussed for new Amazon or DTC brands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a sponge glove cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Price depends on sponge density, glove size and packaging. Send your target spec and quantity for an exact EXW quotation - typical programs are quoted per specification rather than from a fixed list."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a sponge glove and a viscose glove?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A sponge glove has a foam core laminated to a nylon face: it creates rich lather and is gentler, better for sensitive skin and daily shower use. A viscose glove is twisted fibre with no foam - firmer exfoliation and faster drying."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customise the logo, colour and packaging?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We support logo printing, woven labels, Pantone-matched nylon, custom sponge density and packaging from OPP bag to retail box or gift set."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do samples and bulk production take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Samples in about 5-7 working days. Bulk production normally 15-20 working days after sample approval, excluding shipping from Shenzhen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply Amazon FBA sellers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes - FNSKU labelling, poly-bagging with suffocation warnings, carton dimension control for FBA fees, and direct shipping to US and EU fulfillment centres."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
 <header>
@@ -222,14 +537,14 @@ footer {
 <section class="section">
     <div class="container">
         <a href="products.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Products</a>
+        <h1 class="sr-only">Custom Sponge Glove Wholesale Manufacturer - OEM Bath Sponge Mitts</h1>
         <h2 class="section-title">Sponge Gloves</h2>
-        <p class="section-sub">High-quality bath accessories with reliable quality & competitive price</p>
+        <p class="section-sub">6 constructions - MOQ 300 pairs - OEM logo, density and packaging</p>
 
         <div class="product-grid">
-            <!-- 产品 1 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="assets/sponge1.jpg" alt="Sponge Glove">
+                    <img src="assets/sponge1.jpg" alt="Basic Sponge Glove - custom OEM bath sponge glove">
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">Basic Sponge Glove</h3>
@@ -239,13 +554,12 @@ footer {
                         <div class="spec-row"><span class="spec-label">Feature</span><span>Foam Rich</span></div>
                         <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
                     </div>
-                    <a href="https://wa.me/8613510756714?text=Quote for Basic Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                    <a href="https://wa.me/8613510756714?text=Quote%20for%20Basic%20Sponge%20Glove" class="wa-btn" target="_blank">Get Quote</a>
                 </div>
             </div>
-            <!-- 产品 2 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="assets/sponge2.jpg" alt="Sponge Glove">
+                    <img src="assets/sponge2.jpg" alt="Soft Sponge Glove - custom OEM bath sponge glove">
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">Soft Sponge Glove</h3>
@@ -255,13 +569,12 @@ footer {
                         <div class="spec-row"><span class="spec-label">Feature</span><span>Skin-friendly</span></div>
                         <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
                     </div>
-                    <a href="https://wa.me/8613510756714?text=Quote for Soft Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                    <a href="https://wa.me/8613510756714?text=Quote%20for%20Soft%20Sponge%20Glove" class="wa-btn" target="_blank">Get Quote</a>
                 </div>
             </div>
-            <!-- 产品 3 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="assets/sponge3.jpg" alt="Sponge Glove">
+                    <img src="assets/sponge3.jpg" alt="Thick Sponge Glove - custom OEM bath sponge glove">
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">Thick Sponge Glove</h3>
@@ -271,13 +584,12 @@ footer {
                         <div class="spec-row"><span class="spec-label">Feature</span><span>High Absorption</span></div>
                         <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
                     </div>
-                    <a href="https://wa.me/8613510756714?text=Quote for Thick Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                    <a href="https://wa.me/8613510756714?text=Quote%20for%20Thick%20Sponge%20Glove" class="wa-btn" target="_blank">Get Quote</a>
                 </div>
             </div>
-            <!-- 产品 4 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="assets/sponge4.jpg" alt="Sponge Glove">
+                    <img src="assets/sponge4.jpg" alt="Colorful Sponge Glove - custom OEM bath sponge glove">
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">Colorful Sponge Glove</h3>
@@ -287,13 +599,12 @@ footer {
                         <div class="spec-row"><span class="spec-label">Feature</span><span>Beautiful Design</span></div>
                         <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
                     </div>
-                    <a href="https://wa.me/8613510756714?text=Quote for Colorful Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                    <a href="https://wa.me/8613510756714?text=Quote%20for%20Colorful%20Sponge%20Glove" class="wa-btn" target="_blank">Get Quote</a>
                 </div>
             </div>
-            <!-- 产品 5 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="assets/sponge5.jpg" alt="Sponge Glove">
+                    <img src="assets/sponge5.jpg" alt="Portable Sponge Glove - custom OEM bath sponge glove">
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">Portable Sponge Glove</h3>
@@ -303,13 +614,12 @@ footer {
                         <div class="spec-row"><span class="spec-label">Feature</span><span>Light Weight</span></div>
                         <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
                     </div>
-                    <a href="https://wa.me/8613510756714?text=Quote for Portable Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                    <a href="https://wa.me/8613510756714?text=Quote%20for%20Portable%20Sponge%20Glove" class="wa-btn" target="_blank">Get Quote</a>
                 </div>
             </div>
-            <!-- 产品 6 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="assets/sponge6.jpg" alt="Sponge Glove">
+                    <img src="assets/sponge6.jpg" alt="Durable Sponge Glove - custom OEM bath sponge glove">
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">Durable Sponge Glove</h3>
@@ -319,19 +629,155 @@ footer {
                         <div class="spec-row"><span class="spec-label">Feature</span><span>Long Service Life</span></div>
                         <div class="spec-row"><span class="spec-label">Custom</span><span>Support OEM</span></div>
                     </div>
-                    <a href="https://wa.me/8613510756714?text=Quote for Durable Sponge Glove" class="wa-btn" target="_blank">Get Quote</a>
+                    <a href="https://wa.me/8613510756714?text=Quote%20for%20Durable%20Sponge%20Glove" class="wa-btn" target="_blank">Get Quote</a>
                 </div>
             </div>
+
         </div>
+    </div>
+</section>
+
+<!-- 折叠区：详细内容收起 -->
+<section class="section" style="padding-top:0;">
+    <div class="container">
+        <details class="more-info">
+            <summary>Wholesale details: specifications, six constructions, FAQ &amp; related products</summary>
+            <div class="inner">
+                <div class="content-block">
+                    <h2 class="block-title">Overview</h2>
+                    <p class="intro-block">
+                        Sponge gloves combine a soft foam core with a nylon scrubbing face. Unlike a viscose glove, they build a rich lather, feel gentle on sensitive skin and are the standard choice for daily shower use in mass retail and subscription programmes. Newkinyo produces six constructions from 300 pairs, with OEM logo, density and packaging fully customisable.
+                    </p>
+                    <div class="fact-bar">
+                        <div class="fact-item"><h3>300 pairs</h3><p>MOQ per style</p></div>
+                        <div class="fact-item"><h3>6 styles</h3><p>Basic to durable</p></div>
+                        <div class="fact-item"><h3>5–7 days</h3><p>Sample lead time</p></div>
+                        <div class="fact-item"><h3>15–20 days</h3><p>Bulk production</p></div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2 class="block-title">Specification</h2>
+                    <table class="spec-table">
+                        <tr><th>Construction</th><td>Polyurethane foam core + nylon mesh face</td></tr>
+                        <tr><th>Sponge density</th><td>Standard / high-density (choose by lather and lifespan)</td></tr>
+                        <tr><th>Size</th><td>About 13 x 20 cm, custom sizes available</td></tr>
+                        <tr><th>Colours</th><td>Stock colours or Pantone-matched nylon from 1,000 pairs</td></tr>
+                        <tr><th>Logo</th><td>Printed on nylon face, woven label, or header card</td></tr>
+                        <tr><th>Packing</th><td>OPP bag, kraft pouch, PVC box or retail gift set</td></tr>
+                        <tr><th>MOQ</th><td>300 pairs per style</td></tr>
+                        <tr><th>Sample</th><td>5–7 working days</td></tr>
+                        <tr><th>Bulk production</th><td>15–20 working days after sample approval</td></tr>
+                        <tr><th>Trade terms</th><td>EXW / FOB Shenzhen / DDP on request</td></tr>
+                    </table>
+                </div>
+
+                <div class="content-block">
+                    <h2 class="block-title">Six Constructions</h2>
+                    <div class="option-grid">
+                        <div class="option-card">
+                            <h4>Basic</h4>
+                            <ul><li>Standard foam density</li><li>Rich lather</li><li>Best entry price</li></ul>
+                        </div>
+                        <div class="option-card">
+                            <h4>Soft</h4>
+                            <ul><li>Lower density foam</li><li>Gentle on sensitive skin</li><li>Good for daily use</li></ul>
+                        </div>
+                        <div class="option-card">
+                            <h4>Thick</h4>
+                            <ul><li>High absorption</li><li>Firmer feel</li><li>Longer shower sessions</li></ul>
+                        </div>
+                        <div class="option-card">
+                            <h4>Colorful</h4>
+                            <ul><li>Multi-colour nylon face</li><li>Retail shelf appeal</li><li>Gift-set friendly</li></ul>
+                        </div>
+                        <div class="option-card">
+                            <h4>Portable</h4>
+                            <ul><li>Compact and light</li><li>Travel kits</li><li>Lower freight per unit</li></ul>
+                        </div>
+                        <div class="option-card">
+                            <h4>Durable</h4>
+                            <ul><li>Reinforced seam</li><li>High-density core</li><li>Long service life</li></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2 class="block-title">Frequently Asked Questions</h2>
+                    <details class="faq-item" open>
+                        <summary>What is the MOQ for sponge gloves?</summary>
+                        <p>MOQ is 300 pairs per style. Mixed styles can be combined in one order, and trial quantities below 300 pairs can be discussed for new Amazon or DTC brands.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How much does a sponge glove cost?</summary>
+                        <p>Price depends on sponge density, glove size and packaging. Send your target spec and quantity for an exact EXW quotation - typical programs are quoted per specification rather than from a fixed list.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What is the difference between a sponge glove and a viscose glove?</summary>
+                        <p>A sponge glove has a foam core laminated to a nylon face: it creates rich lather and is gentler, better for sensitive skin and daily shower use. A viscose glove is twisted fibre with no foam - firmer exfoliation and faster drying.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I customise the logo, colour and packaging?</summary>
+                        <p>Yes. We support logo printing, woven labels, Pantone-matched nylon, custom sponge density and packaging from OPP bag to retail box or gift set.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How long do samples and bulk production take?</summary>
+                        <p>Samples in about 5-7 working days. Bulk production normally 15-20 working days after sample approval, excluding shipping from Shenzhen.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you supply Amazon FBA sellers?</summary>
+                        <p>Yes - FNSKU labelling, poly-bagging with suffocation warnings, carton dimension control for FBA fees, and direct shipping to US and EU fulfillment centres.</p>
+                    </details>
+                </div>
+
+                <div class="content-block">
+                    <h2 class="block-title">Related Products</h2>
+                    <div class="related-grid">
+                        <a href="viscose.html" class="related-card">
+                            <h4>100% Viscose Gloves</h4>
+                            <p>14 stock colours, MOQ 100 pcs, EXW $0.32-0.50.</p>
+                        </a>
+                        <a href="african.html" class="related-card">
+                            <h4>African Net Sponge</h4>
+                            <p>Nylon mesh back scrubber, MOQ 500 pcs.</p>
+                        </a>
+                        <a href="brand-customized-bath-mitts.html" class="related-card">
+                            <h4>Custom Pattern Bath Mitts</h4>
+                            <p>SDS-compliant full-print patterns, MOQ 1,000.</p>
+                        </a>
+                        <a href="newkinyo-amazon-top-sellers-supplier.html" class="related-card">
+                            <h4>Why 50+ Amazon Top 100 Sellers Choose Us</h4>
+                            <p>Verification method, cases and FBA support.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+</section>
+
+<section class="cta-band">
+    <div class="container">
+        <h2>Need Sponge Glove Pricing?</h2>
+        <p>Tell us your target density, size and quantity - quotation and mockup within 24 hours.</p>
+        <a href="https://wa.me/8613510756714?text=Quote%20for%20Sponge%20Gloves%20wholesale" class="wa-btn" target="_blank">Get a Quote on WhatsApp</a>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>&copy; 2026 Newkinyo. All Rights Reserved.</p>
+        <p>&copy; 2026 Newkinyo &middot; Exfoliating Bath Glove &amp; Net Sponge Manufacturer, Shenzhen, China</p>
     </div>
 </footer>
 
-<a href="https://wa.me/8613510756714" class="whatsapp-float" target="_blank">💬</a>
+<a href="https://wa.me/8613510756714?text=Hello%20I%20want%20to%20inquire%20about%20exfoliating%20gloves" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 </body>
 </html>
