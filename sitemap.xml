@@ -1,37 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://newkinyo.com/</loc>
-  <lastmod>2026-06-10T09:40:13+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://newkinyo.com/products</loc>
-  <lastmod>2026-06-10T09:40:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://newkinyo.com/about</loc>
-  <lastmod>2026-06-10T09:40:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://newkinyo.com/contact</loc>
-  <lastmod>2026-06-10T09:40:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://newkinyo.com/viscose</loc>
-  <lastmod>2026-06-10T09:40:13+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://newkinyo.com/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/products</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/viscose</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/sponge</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/african</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/brand-customized-bath-mitts</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/viscose-detail</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/design-detail</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/newkinyo-amazon-top-sellers-supplier</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/about</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://newkinyo.com/contact</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.70</priority>
+  </url>
 </urlset>
