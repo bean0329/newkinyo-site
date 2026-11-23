@@ -1,10 +1,11 @@
 /*
- * Newkinyo 全站统计（GA4 + 转化埋点）
+ * Newkinyo 全站统计（GA4 + Microsoft Clarity 热力图 + 转化埋点）
  *
- * 启用方法（只改这一个文件）：
- * 1. 到 analytics.google.com 创建 GA4「网络」媒体资源（网站地址填 https://newkinyo.com）
- * 2. 复制衡量 ID（形如 G-1ABC2DEF3G）
- * 3. 把你的 ID 填进下方 GA4_ID 引号里，保存即可，全站 18 个页面自动生效
+ * 启用只需改本文件最下面两行（其余都不用动）：
+ *   GA4_ID     = 填 Google Analytics 衡量 ID（形如 G-1ABC2DEF3G）
+ *   CLARITY_ID = 填 Microsoft Clarity 项目 ID（一串字母数字，见 clarity.microsoft.com 项目设置）
+ *
+ * 填好保存后全站 18 个页面自动生效；留空则对应功能不加载、不报错。
  *
  * 自动埋点的事件（GA4 报告 → 事件 里可直接看）：
  *   whatsapp_click  — 点击任何 WhatsApp 按钮/浮窗
@@ -13,8 +14,14 @@
  *   quote_click     — 点击任何"Get Quote / Contact"入口
  *   inquiry_submit  — 联系页询盘表单提交
  *   guide_click     — 点击页脚 Buying Guides 内链
+ *
+ * Clarity 无需手动埋点，自动录制会话、点击热力图和滚动深度。
  */
-var GA4_ID = ""; // ← 把你的 GA4 衡量 ID（形如 G-1ABC2DEF3G）填到这对引号里
+
+// ============ 在这里填 ID ============
+var GA4_ID = "";     // ← Google Analytics 衡量 ID，形如 G-1ABC2DEF3G
+var CLARITY_ID = ""; // ← Microsoft Clarity 项目 ID，一串字母数字
+// ====================================
 
 (function () {
   "use strict";
@@ -53,7 +60,7 @@ var GA4_ID = ""; // ← 把你的 GA4 衡量 ID（形如 G-1ABC2DEF3G）填到�
     });
   }
 
-  // GA4 动态加载；ID 未替换（仍是占位符）时自动不加载、不报错
+  // GA4 动态加载
   if (GA4_ID.indexOf("G-") === 0) {
     var s = document.createElement("script");
     s.async = true;
@@ -64,5 +71,13 @@ var GA4_ID = ""; // ← 把你的 GA4 衡量 ID（形如 G-1ABC2DEF3G）填到�
       gtag("config", GA4_ID);
     };
     document.head.appendChild(s);
+  }
+
+  // Microsoft Clarity 热力图动态加载
+  if (CLARITY_ID) {
+    var c = document.createElement("script");
+    c.async = true;
+    c.src = "https://www.clarity.ms/tag/" + CLARITY_ID;
+    document.head.appendChild(c);
   }
 })();
