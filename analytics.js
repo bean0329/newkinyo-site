@@ -19,7 +19,7 @@
  */
 
 // ============ 在这里填 ID ============
-var GA4_ID = "";     // ← Google Analytics 衡量 ID，形如 G-1ABC2DEF3G
+var GA4_ID = "G-QB94NPHD5J";     // ← Google Analytics 衡量 ID，形如 G-1ABC2DEF3G
 var CLARITY_ID = ""; // ← Microsoft Clarity 项目 ID，一串字母数字
 // ====================================
 
